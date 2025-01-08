@@ -2,3 +2,9 @@
 
 grpcio
 grpcio-tools
+
+# Dependencies for AI integration and automation
+xaitk-saliency
+opencv-python
+pytest
+hypothesis

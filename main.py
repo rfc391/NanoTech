@@ -97,3 +97,36 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
     
+
+# Integration of XAITK and OpenCV
+
+# Import necessary libraries
+import cv2
+from xaitk.saliency import PerturbImage
+
+# Example integration with OpenCV for signal processing
+def process_signal_with_opencv(image_path):
+    # Load image using OpenCV
+    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    if image is None:
+        raise ValueError("Image not found or invalid format.")
+
+    # Apply GaussianBlur for noise reduction
+    processed_image = cv2.GaussianBlur(image, (5, 5), 0)
+    return processed_image
+
+# Example integration with XAITK for explainability
+def explain_signal(image):
+    perturb = PerturbImage()
+    saliency_map = perturb(image)
+    return saliency_map
+
+if __name__ == "__main__":
+    # Example usage
+    try:
+        input_image = "example_signal.jpg"  # Replace with actual signal image
+        processed_image = process_signal_with_opencv(input_image)
+        explanation = explain_signal(processed_image)
+        print("Signal processed and explained successfully.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
