@@ -1,10 +1,5 @@
-# Add necessary Python packages here.
-
+opencv-python-headless
 grpcio
 grpcio-tools
-
-# Dependencies for AI integration and automation
-xaitk-saliency
-opencv-python
+pycryptodome
 pytest
-hypothesis
