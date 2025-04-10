@@ -1,0 +1,14 @@
+
+syntax = "proto3";
+
+service AIService {
+  rpc ProcessImage (ImageRequest) returns (ImageResponse);
+}
+
+message ImageRequest {
+  string image_path = 1;
+}
+
+message ImageResponse {
+  bytes processed_image = 1;
+}

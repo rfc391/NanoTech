@@ -1,0 +1,11 @@
+
+syntax = "proto3";
+
+package nanotech;
+
+message SignalData {
+  string sensor_id = 1;
+  double timestamp = 2;
+  repeated double measurements = 3;
+}
+    
